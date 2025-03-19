@@ -91,6 +91,22 @@
         "type": "github"
       }
     },
+    "kernel": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1645913788,
+        "narHash": "sha256-irmO2q8RTmLteSxL8nRbvbeNRxwLhLD5VBiXVkb0I2w=",
+        "owner": "topser9",
+        "repo": "kernel_samsung_universal7885",
+        "rev": "ae3bd5aef8fd81bff8c8807fa9a16ef47970b9c3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "topser9",
+        "repo": "kernel_samsung_universal7885",
+        "type": "github"
+      }
+    },
     "nix-index-database": {
       "inputs": {
         "nixpkgs": [
@@ -268,6 +284,7 @@
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
+        "kernel": "kernel",
         "nix-kernelsu-builder": "nix-kernelsu-builder",
         "nixpkgs": "nixpkgs"
       }

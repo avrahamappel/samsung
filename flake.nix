@@ -9,9 +9,13 @@
         flake-parts.follows = "flake-parts";
       };
     };
+    kernel = {
+      flake = false;
+      url = "github:topser9/kernel_samsung_universal7885";
+    };
   };
   outputs =
-    { flake-parts, ... }@inputs:
+    { flake-parts, kernel, ... }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.nix-kernelsu-builder.flakeModules.default
@@ -34,6 +38,7 @@
               # };
 
               kernelDefconfigs = [
+                "ranchu_defconfig"
                 # "gki_defconfig"
                 # "vendor/kalama_GKI.config"
                 # "vendor/ext_config/moto-kalama.config"
@@ -45,7 +50,7 @@
                 # "KCFLAGS=\"-w\""
                 # "KCPPFLAGS=\"-w\""
               ];
-              kernelSrc = ./kernel;
+              kernelSrc = kernel;
             };
           };
         };
